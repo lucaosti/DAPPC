@@ -1,0 +1,13 @@
+pandas
+numpy
+openpyxl
+scikit-learn
+scipy
+matplotlib
+seaborn
+minisom
+scikit-fuzzy
+networkx
+tqdm
+jupyter
+ipykernel
