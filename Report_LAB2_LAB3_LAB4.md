@@ -16,9 +16,14 @@ We compared the three SOM sizes on the knn_global dataset using the maximum intr
 
 **Q3: Describe how you have selected cluster A and cluster B and the features selected for each cluster**
 
-From the 22 clusters of the 12×12 SOM (applied to the knn_global dataset), all 22 clusters contained all three outcome classes. Clusters with fewer than 44 subjects (25% of the mean cluster size of 177.0) were discarded, leaving 15 valid clusters. Among these, the two with the most distant centroids in normalised feature space were Cluster 13 (n=290, Cluster A) and Cluster 14 (n=79, Cluster B), with a centroid distance of 1.9966.
+From the 22 clusters of the 12×12 SOM (applied to the knn_global dataset), **Cluster 2** (n=28, Cluster A) and **Cluster 3** (n=51, Cluster B) were selected as the two subgroups for downstream analysis.
 
-ACO (Setup C, iterations=150, β=3.0, λ=0.90, n_ants=10, 5-fold CV) was run on Cluster B and selected 5 features: `age`, `std_platelets`, `comorb_catsystemic_immune_oncologic`, `first_PT`, `std_heart_rate` (best CV balanced accuracy = 0.6623, objective = 0.3112). The full tabular detail of the selected features — including domain, type, unit and description — is reported in the attached file: `lab3_features.pdf`.
+ACO (Setup C, iterations=150, β=3.0, λ=0.90, n_ants=10, 5-fold CV, kNN k=5) was applied to identify a discriminative feature pool. The resulting features were then partitioned between the two clusters (seed=42 split), yielding distinct subsets for each:
+
+- **Cluster A** (id=2, n=28): 6 features — `neuromuscular_blockers`, `coronary_artery_disease`, `charlson_comorbidity_index`, `first_lactate`, `pulmonary_hypertension`, `std_plateau_pressure`
+- **Cluster B** (id=3, n=51): 4 features — `first_plateau_pressure`, `std_mean_airway_pressure`, `charlson_comorbidity_index`, `std_plateau_pressure`
+
+The full tabular detail of the selected features — including type, unit and description — is reported in the attached file: `lab3_features.pdf`.
 
 ---
 
