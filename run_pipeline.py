@@ -46,9 +46,9 @@ EXPECTED_OUTPUTS: dict[Path, tuple[str, ...]] = {
         'LAB1_clustering_imputed_by_class',
     ),
     PIPELINE[3][1]: ('LAB2_assignments_knn_global_12x12',),
-    PIPELINE[4][1]: ('LAB3_selected_features',),
-    PIPELINE[5][1]: (),  # cluster1 has no save_versioned artifact
-    PIPELINE[6][1]: ('LAB4_fuzzy_rules_cluster3',),
+    PIPELINE[4][1]: ('LAB3_selected_features_A', 'LAB3_selected_features_B'),
+    PIPELINE[5][1]: ('LAB4_FIS_results_cluster1', 'LAB4_FIS_rules_cluster1'),
+    PIPELINE[6][1]: ('LAB4_FIS_results_cluster4', 'LAB4_FIS_rules_cluster4'),
 }
 
 DEFAULT_TIMEOUT = 3600  # seconds per notebook
